@@ -8,11 +8,12 @@ public class DoubleLinkedList<T>
     public Node<T> current;
 
     /**
-     * Einf?gen einer neuen <T>
+     * Einfuegen einer neuen <T>
      * @param a <T>
      */
     public void add(T a) {
 
+        //If no node exists, create a new one and set previous and next node to null
         if (first == null)
         {
             first = new Node<T>(a);
@@ -22,6 +23,7 @@ public class DoubleLinkedList<T>
         }
         else
         {
+            //if at least one node exists, insert after that node
             Node<T> newNode = new Node<T>(a);
             newNode.setNext(null);
             newNode.setPrevious(last);
@@ -33,8 +35,9 @@ public class DoubleLinkedList<T>
     /**
      * Internen Zeiger für next() zurücksetzen
      */
-    public void reset() {
-
+    public void reset()
+    {
+        //reset the internal state, point current to first element
         current = first;
 
     }
@@ -42,10 +45,10 @@ public class DoubleLinkedList<T>
     /**
      * analog zur Funktion reset()
      */
-    public void resetToLast() {
-
+    public void resetToLast()
+    {
+        //reset the internal state, point current to last element
         current = last;
-
     }
 
     /**
@@ -53,7 +56,8 @@ public class DoubleLinkedList<T>
      * @return Node|null
      */
     public Node<T> getFirst() {
-    	
+
+        // only return first if it isn't null
     	if( first != null) {return first;}
 
         return null;
@@ -65,6 +69,7 @@ public class DoubleLinkedList<T>
      */
     public Node<T> getLast() {
 
+        // only return last if it isn't null
         if( last != null) {return last;}
     	return null;
     }
@@ -76,11 +81,14 @@ public class DoubleLinkedList<T>
      */
     public T next() {
 
+        //return null if current is not set (null)
         if ( current == null) { return null;}
 
+        //create temporary node so we can set current to the next element
         Node<T> temp = current;
         current = current.getNext();
 
+        //return temp data, temp will get cleaned by garbage collector
         return temp.getData();
     }
 
@@ -90,10 +98,14 @@ public class DoubleLinkedList<T>
      */
     public T previous() {
 
+        //return null if current is not set (null)
         if ( current == null) { return null;}
+
+        //create temporary node so we can set current to the previous element
         Node<T> temp = current;
         current = current.getPrevious();
 
+        //return temp data, temp will get cleaned by garbage collector
         return temp.getData();
     }
     
@@ -103,8 +115,13 @@ public class DoubleLinkedList<T>
      */
     public void moveNext() {
 
+        //return if current is not set (null)
         if (current == null ) { return; }
+
+        //return if there is no next element
         if (current.getNext() == null ) { return; }
+
+        //else set current to next element
         current = current.getNext();
     }
     
@@ -113,8 +130,13 @@ public class DoubleLinkedList<T>
      */
     public void movePrevious() {
 
+        //return if current is not set (null)
         if (current == null ) { return; }
+
+        //return if there is no previous element
         if (current.getPrevious()== null ) { return; }
+
+        //else set current to previous element
         current = current.getPrevious();
     }
    
@@ -124,6 +146,8 @@ public class DoubleLinkedList<T>
      * @throws CurrentNotSetException
      */
     public T getCurrent() throws CurrentNotSetException {
+
+        //return data if current is not null, else throw exception
 
         if (current != null)
         {
@@ -142,19 +166,19 @@ public class DoubleLinkedList<T>
      */
     public T get(int pos) {
 
+        //we start counting at 1, so count is 1
         int count = 1;
         Node<T> temp = first;
 
         while (count < pos)
         {
-
+            //if we reach the end of the list, return null
             if(temp.getNext() == null ) { return null;}
             temp = temp.getNext();
 
         }
-
+        //else return data
         return temp.getData();
-
     }
 
     /**
@@ -164,47 +188,77 @@ public class DoubleLinkedList<T>
      */
     public void remove(int pos) {
 
+        //we start counting at 1, so count is 1
         int count = 1;
+
+        //create three temporary nodes, which will be cleaned up by the garbage collector
         Node<T> temp = first;
-        Node<T> temp_previous = null;
-        Node<T> temp_next = null;
+        //Node<T> temp_previous = null;
+        //Node<T> temp_next = null;
 
-        if(temp == null) { return; }  //list empty
+        if(temp == null) { return; }  //if temp is null the list is empty, so there is nothing to remove, return then
 
-        while (count < pos)
+        if((temp == first) & (temp == last))   //Only one element left in List, set all elements to null and return
         {
-            if(temp.getNext() != null)
-            {
-                temp = temp.getNext();
-            }
-            count++;
-
-        }
-
-        if( temp == first)
-        {
-            //Delete the first element
-            first = first.getNext();
-            first.setPrevious(null);
+            first = null;
+            last = null;
             temp = null;
             return;
         }
 
+        while (count < pos)
+        {
+            //iterate through the list until we found the right list element
+            //if we reach the end of the list, then return
+
+            if(temp.getNext() != null)
+            {
+                temp = temp.getNext();
+            }
+            else { return; }
+            count++;
+        }
+
+        //Special case: temp is the first list element
+        if( temp == first)
+        {
+                //we have more than one element in the list
+                //set first to the next element
+                //set the previous element to null
+                //delete the reference to temp and return
+                first = first.getNext();
+                first.setPrevious(null);
+                temp = null;
+                return;
+        }
+
         if ( temp == last)
         {
+            //we have more than one element in the list
+            //set last to the element before
+            //set the next element to null
+            //delete the reference to temp and return
             last = last.getPrevious();
             last.setNext(null);
             temp = null;
             return;
         }
 
+        //Get the previous element of temp and set the next link to the next element of temp
+        temp.getPrevious().setNext(temp.getNext());
 
-       temp_previous = temp.getPrevious();
-       temp_next = temp.getNext();
-       temp_previous.setNext(temp_next);
-       temp_next.setPrevious(temp_previous);
+        //Get the next element of temp and set the previous link to the previous element of temp
+        temp.getNext().setPrevious(temp.getPrevious());
 
+        //Also possible with temporary Nodes
+        //This nodes are defined up but commented out
 
+        //temp_previous = temp.getPrevious();
+        //temp_next = temp.getNext();
+        //temp_previous.setNext(temp_next);
+        //temp_next.setPrevious(temp_previous);
+
+        //If we remove the current element set current to null
         if(temp == current) { current = null;}
     }
     
@@ -216,12 +270,12 @@ public class DoubleLinkedList<T>
      */
     public void removeCurrent() throws CurrentNotSetException {
 
-        Node<T> temp_previous;
-        Node<T> temp_next;
+        //Node<T> temp_previous;
+        //Node<T> temp_next;
 
-        if(current == null) { return; } //Current not set
+        if(current == null) { return; } //Current not set, return
 
-        if(current == first & current == last)   //Only one element left in List, set all elements to null
+        if(current == first & current == last)   //Only one element left in List, set all elements to null and return
         {
             first = null;
             last = null;
@@ -229,47 +283,68 @@ public class DoubleLinkedList<T>
             return;
         }
 
+        //Special case current is first element
         if( current == first)
         {
-            //Delete the first element
+            //Here we have at least two elements in the list
+            //We delete the first element
             first = first.getNext();
             first.setPrevious(null);
 
-            if(current.getNext() != null)
-            {
-                current = current.getNext();
-            }
-            else
-            {
-                current = current.getPrevious();
-            }
+            //Because we know for sure that we have at least two elements, we dont have to check here if
+            //the next element is null
+            //Also current.getPrevious will allways be null, because we delete the first element
+            current = current.getNext();
             return;
         }
 
+        //Special case current is last element
         if ( current == last)
         {
+            //Here we have at least two elements in the list
+            //We delete the last element
             last = last.getPrevious();
             last.setNext(null);
 
-            if(current.getNext() != null)
-            {
-                current = current.getNext();
-            }
-            else
-            {
-                current = current.getPrevious();
-            }
+            //Because we know for sure that we have at least two elements, we dont have to check here if
+            //the previous element is null
+            //Also current.getNext will allways be null, because we delete the last element
+            current = current.getPrevious();
             return;
         }
 
+        //Get the previous element of current and set the link to the next element to the element after current
+        current.getPrevious().setNext(current.getNext());
 
-        temp_previous = current.getPrevious();
-        temp_next = current.getNext();
+        //Get the next element of current and set the link to the previous element to the element before current
+        current.getNext().setPrevious(current.getPrevious());
 
-        temp_previous.setNext(temp_next);
-        temp_next.setPrevious(temp_previous);
+        //Also possible with temporary Nodes
+        //This nodes are defined up but commented out
 
-        if(temp_next == null)
+        /////////////////Start commented codeblock
+
+        //temp_previous = current.getPrevious();
+        //temp_next = current.getNext();
+        //temp_previous.setNext(temp_next);
+        //temp_next.setPrevious(temp_previous);
+
+        //if(temp_next == null)
+        //{
+        //    current = current.getPrevious();
+        //    return;
+        //}
+        //else
+        //{
+        //    current = current.getNext();
+        //    return;
+        //}
+
+        /////////////////END commented codeblock
+
+        //If the next element is null, set current to the previous element
+        //Else set current to the next element
+        if(current.getNext() == null)
         {
             current = current.getPrevious();
             return;
@@ -277,7 +352,6 @@ public class DoubleLinkedList<T>
         else
         {
             current = current.getNext();
-            temp_next.setPrevious(temp_previous);
             return;
         }
     }
@@ -292,16 +366,21 @@ public class DoubleLinkedList<T>
         Node<T> newNode = new Node<T>(a);
         Node<T> temp_next = null;
 
-        if(current != null) { temp_next = current.getNext();}
+        if(current == null) { return; } //return if current is not set
 
-        newNode.setNext(temp_next);
-        newNode.setPrevious(current);
+        temp_next = current.getNext();  //get the element after current
 
+        newNode.setNext(temp_next);   //set the next element of the new Node
+        newNode.setPrevious(current); // set the previous element of the new node to current
+
+        //we can only set the previous here if we are not at the end of the list
+        //if temp_next is null, then we are at the end of the list
         if(temp_next != null) { temp_next.setPrevious(newNode);}
 
-        if(current != null) { current.setNext(newNode); }
+        //set the next node of current to the new node
+        current.setNext(newNode);
 
+        //move the position of current to the new node
         current = newNode;
-
     }
 }
