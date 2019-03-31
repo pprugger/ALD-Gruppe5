@@ -45,15 +45,12 @@ public class Woerterbuch {
 	 */
 	public Set<String> getWordsWithPrefix(String prefix) {
 
-		Wort word = null;
+		Wort word = root;
 		int count = 0;
 		Set<String> Strings =  new HashSet<String>();
 
 		if(root == null) { return null; }
 		if(root.getWort().contains(prefix)) { Strings.add(root.getWort()); }
-
-		word = find("Hom");
-		System.out.println(countWordsInSubTree(word));
 
 
 		return Strings;
