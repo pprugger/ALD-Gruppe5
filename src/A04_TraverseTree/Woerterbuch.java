@@ -3,7 +3,6 @@ package A04_TraverseTree;
 import java.util.HashSet;
 import java.util.Set;
 
-
 public class Woerterbuch {
 
 	/**
