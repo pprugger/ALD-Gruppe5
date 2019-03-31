@@ -1,5 +1,6 @@
 package A04_TraverseTree;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -15,28 +16,52 @@ public class Woerterbuch {
 	}
 
 	/**
-	 * Z?hlt alle W?rter des Teilbaums ab einem bestimmten Wort
+	 * Zaehlt alle Woerter des Teilbaums ab einem bestimmten Wort
 	 * @param w Wort
-	 * @return Zahl der W?rter (=Anzahl der Elemente)
+	 * @return Zahl der Woerter (=Anzahl der Elemente)
 	 */
 	public int countWordsInSubTree(Wort w) {
 
-		return 0;
+		int wordcount = 0;
+		if (w == null) { return 0; }
+		else { wordcount++; }
+
+		if (w.getLeft() != null)
+		{
+			wordcount += countWordsInSubTree(w.getLeft());
+		}
+
+		if (w.getRight() != null)
+		{
+			wordcount += countWordsInSubTree(w.getRight());
+		}
+		return wordcount;
 	}
 
 	/**
-	 * Liefert die Menge aller Woerter retour, die ein spezifisches Proefix haben.
-	 * @param prefix Woerter m?ssen diesen Pr?fix haben
-	 * @return Menge aller zutreffenden W?rter
+	 * Liefert die Menge aller Woerter retour, die ein spezifisches Praefix haben.
+	 * @param prefix Woerter muessen diesen Praefix haben
+	 * @return Menge aller zutreffenden Woerter
 	 */
 	public Set<String> getWordsWithPrefix(String prefix) {
 
-		return null;
+		Wort word = null;
+		int count = 0;
+		Set<String> Strings =  new HashSet<String>();
+
+		if(root == null) { return null; }
+		if(root.getWort().contains(prefix)) { Strings.add(root.getWort()); }
+
+		word = find("Hom");
+		System.out.println(countWordsInSubTree(word));
+
+
+		return Strings;
 	}
 
 	/**
-	 * Neues Wort hinzuf?gen
-	 * @param wort Hinzuzuf?gendes Wort
+	 * Neues Wort hinzufuegen
+	 * @param wort Hinzuzufuegendes Wort
 	 */
 	public void add(String wort) {
 		Wort neu = new Wort(wort);
@@ -55,7 +80,7 @@ public class Woerterbuch {
 				}
 				w = w.getLeft();
 			}
-			else if (vgl > 0) {		// Neues Wort ist lexikographisch gr??er
+			else if (vgl > 0) {		// Neues Wort ist lexikographisch groesser
 				if (w.getRight() == null) {
 					w.setRight(neu);
 					neu.setParent(w);
@@ -88,5 +113,4 @@ public class Woerterbuch {
 			return find(current.getRight(), s);
 		}
 	}
-
 }

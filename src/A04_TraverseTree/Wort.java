@@ -18,7 +18,7 @@ public class Wort {
 	private Wort parent;
 
 	/**
-	 * Wert des Knotens, hier: String, der Wort enth?lt
+	 * Wert des Knotens, hier: String, der Wort enthaelt
 	 */
 	private final String wort;
 
