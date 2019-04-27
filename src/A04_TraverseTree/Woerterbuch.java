@@ -2,6 +2,7 @@ package A04_TraverseTree;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 
 public class Woerterbuch {
 
@@ -46,10 +47,25 @@ public class Woerterbuch {
 
 		Wort word = root;
 		int count = 0;
-		Set<String> Strings =  new HashSet<String>();
+		Set<String> Strings =  new HashSet<>();
+		Stack<Wort> stack = new Stack<>();
 
-		if(root == null) { return null; }
+
+		if(word == null) { return null; }
 		if(root.getWort().contains(prefix)) { Strings.add(root.getWort()); }
+		stack.push(root);
+
+		while(true)
+		{
+			if(!stack.empty()) { word = stack.pop(); }
+			else { break;}
+
+			if (word.getLeft() != null) { stack.push(word.getLeft()); }
+			if(word.getRight() != null) { stack.push(word.getRight()); }
+			if(word.getWort().contains(prefix)) { Strings.add(word.getWort()); }
+
+
+		}
 
 
 		return Strings;
