@@ -13,7 +13,7 @@ public class Woerterbuch {
 
 	public Wort getRoot() {
 		return root;
-	}
+	}     //return the root of the tree
 
 	/**
 	 * Zaehlt alle Woerter des Teilbaums ab einem bestimmten Wort
@@ -23,19 +23,23 @@ public class Woerterbuch {
 	public int countWordsInSubTree(Wort w) {
 
 		int wordcount = 0;
-		if (w == null) { return 0; }
-		else { wordcount++; }
+		if (w == null) { return 0; }		//if word is empty return 0
+		else { wordcount++; }				//else add 1 to the counter
 
 		if (w.getLeft() != null)
 		{
-			wordcount += countWordsInSubTree(w.getLeft());
-		}
+			wordcount += countWordsInSubTree(w.getLeft());		//if the left word isn't null, call the count function
+		}														//recursively with the left word
 
 		if (w.getRight() != null)
 		{
-			wordcount += countWordsInSubTree(w.getRight());
-		}
+			wordcount += countWordsInSubTree(w.getRight());		//if the right word isn't null, call the count function
+		}														//recursively with the right word
 		return wordcount;
+
+		/* Wordcount is saved on the stack for each function called and returned to the calling function
+		   This way the first instance of the function get's all the wordcounts from the recursively called functions.
+		 */
 	}
 
 	/**
@@ -51,24 +55,22 @@ public class Woerterbuch {
 		Stack<Wort> stack = new Stack<>();
 
 
-		if(word == null) { return null; }
-		if(root.getWort().contains(prefix)) { Strings.add(root.getWort()); }
-		stack.push(root);
+		if(word == null) { return null; }										//check if the root of the tree is null
+		if(word.getWort().contains(prefix)) { Strings.add(word.getWort()); }	//if not check if the root contains the prefix
+		stack.push(word);														//add the root of the tree to the stack
 
 		while(true)
 		{
-			if(!stack.empty()) { word = stack.pop(); }
-			else { break;}
+			if(!stack.empty()) { word = stack.pop(); }					//get the next element from stack if the stack
+			else { break;}												//if it isn't empty, else break loop
 
-			if (word.getLeft() != null) { stack.push(word.getLeft()); }
-			if(word.getRight() != null) { stack.push(word.getRight()); }
+			if (word.getLeft() != null) { stack.push(word.getLeft()); }		//if not null, push left element to stack
+			if(word.getRight() != null) { stack.push(word.getRight()); }	//if not null, push right element to stack
 			if(word.getWort().contains(prefix)) { Strings.add(word.getWort()); }
-
-
+			/* check if element contains prefix, if so add the String to the HashSet */
 		}
 
-
-		return Strings;
+		return Strings;		//return the HashSet
 	}
 
 	/**
