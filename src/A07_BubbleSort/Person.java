@@ -25,21 +25,11 @@ public class Person {
 	 */
 	public int compareTo(Person p)
 	{
-		if(this.getNachname().equals(p.getNachname()))
+		if(this.getNachname().equals(p.getNachname()))                      //same Nachname
 		{
-			if(this.getVorname().equals(p.getVorname())) { return 0; }
-			else
-			{
-				return this.getVorname().compareTo(p.getVorname());
-			}
+			if(this.getVorname().equals(p.getVorname())) { return 0; }      //Same Nachname and Vorname
+			else { return this.getVorname().compareTo(p.getVorname()); }  //return sorted (compareTo from String Class)
 		}
-
-		return this.getNachname().compareTo(p.getNachname());
+		return this.getNachname().compareTo(p.getNachname());             //return sorted (compareTo from String Class)
 	}
-
-
-
-
-
-
 }
