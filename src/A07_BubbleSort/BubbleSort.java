@@ -6,7 +6,7 @@ public class BubbleSort implements PersonenSort
 	public void sort(Person[] personen)
 	{
 		Person temp;
-		boolean switched = false;
+		boolean switched = true;
 
 		for(int i = 1; i < personen.length; i++)
 		{
