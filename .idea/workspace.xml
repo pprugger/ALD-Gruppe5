@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e1e90b1-52ef-46c0-b833-fc6e31d8987f" name="Default Changelist" comment="Cleanup, Bugfixes and Comments">
-      <change beforePath="$PROJECT_DIR$/src/A04_TraverseTree/Woerterbuch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A04_TraverseTree/Woerterbuch.java" afterDir="false" />
+    <list default="true" id="4e1e90b1-52ef-46c0-b833-fc6e31d8987f" name="Default Changelist" comment="Cleanup, Bugfixes and Comments,">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aufgabenstellungen/META-INF/Aufgabenstellungen.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/A01_Stack/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/A01_Stack/Stack.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,48 +13,53 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ALD_Gruppe5$TestStack.ic" NAME="TestStack Coverage Results" MODIFIED="1558976664802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>A01_Stack.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/A01_Stack/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding>
+                <element signature="e#179#180#0" expanded="true" />
+                <element signature="e#206#207#0" expanded="true" />
+                <element signature="e#238#239#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
+                <element signature="e#338#339#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Woerterbuch.java">
+        <entry file="file://$PROJECT_DIR$/src/A01_Stack/Stack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#995#1003#0" expanded="true" />
-                <element signature="e#1970#1971#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Wort.java">
+        <entry file="file://$PROJECT_DIR$/src/A01_Stack/TestStack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/WoerterbuchWordsPrefixTest.java">
+        <entry file="file://$PROJECT_DIR$/src/A01_Stack/StackEmptyException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -84,6 +91,7 @@
         <option value="$PROJECT_DIR$/src/A04_TraverseTree/Wort.java" />
         <option value="$PROJECT_DIR$/src/A04_TraverseTree/Demo.java" />
         <option value="$PROJECT_DIR$/src/A04_TraverseTree/Woerterbuch.java" />
+        <option value="$PROJECT_DIR$/src/A01_Stack/Stack.java" />
       </list>
     </option>
   </component>
@@ -94,8 +102,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="186" />
-    <option name="y" value="168" />
+    <option name="x" value="830" />
+    <option name="y" value="75" />
     <option name="width" value="1262" />
     <option name="height" value="691" />
   </component>
@@ -104,7 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,12 +128,13 @@
               <item name="ALD-Gruppe5" type="b2602c69:ProjectViewProjectNode" />
               <item name="ALD-Gruppe5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="A04_TraverseTree" type="462c0819:PsiDirectoryNode" />
+              <item name="A01_Stack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -135,7 +143,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554052031937" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558976728489" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -154,44 +162,63 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Demo (1)">
-    <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="A04_TraverseTree.Demo" />
+  <component name="RunManager" selected="JUnit.TestStack">
+    <configuration name="BubbleSortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aufgabenstellungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A04_TraverseTree.*" />
+          <option name="PATTERN" value="A07_BubbleSort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="A07_BubbleSort" />
+      <option name="MAIN_CLASS_NAME" value="A07_BubbleSort.BubbleSortTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="A03_DoubleLinkedList.Demo" />
+    <configuration name="TestStack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aufgabenstellungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A03_DoubleLinkedList.*" />
+          <option name="PATTERN" value="A01_Stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="A01_Stack" />
+      <option name="MAIN_CLASS_NAME" value="A01_Stack.TestStack" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDoubleLinkedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestStack.getCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Aufgabenstellungen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="A03_DoubleLinkedList.*" />
+          <option name="PATTERN" value="A01_Stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="A03_DoubleLinkedList" />
-      <option name="MAIN_CLASS_NAME" value="A03_DoubleLinkedList.TestDoubleLinkedList" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="A01_Stack" />
+      <option name="MAIN_CLASS_NAME" value="A01_Stack.TestStack" />
+      <option name="METHOD_NAME" value="getCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStack.stackEmptyException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Aufgabenstellungen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="A01_Stack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="A01_Stack" />
+      <option name="MAIN_CLASS_NAME" value="A01_Stack.TestStack" />
+      <option name="METHOD_NAME" value="stackEmptyException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,17 +233,17 @@
       </extension>
       <option name="PACKAGE_NAME" value="A04_TraverseTree" />
       <option name="MAIN_CLASS_NAME" value="A04_TraverseTree.WoerterbuchWordsPrefixTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo (1)" />
+        <item itemvalue="JUnit.TestStack" />
+        <item itemvalue="JUnit.TestStack.stackEmptyException" />
+        <item itemvalue="JUnit.TestStack.getCount" />
+        <item itemvalue="JUnit.BubbleSortTest" />
         <item itemvalue="JUnit.WoerterbuchWordsPrefixTest" />
-        <item itemvalue="Application.Demo" />
-        <item itemvalue="JUnit.TestDoubleLinkedList" />
       </list>
     </recent_temporary>
   </component>
@@ -240,12 +267,33 @@
     <history-entry file="WoerterbuchWordsPrefixTest - 2019.03.31 at 17h 02m 54s.xml">
       <configuration name="WoerterbuchWordsPrefixTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WoerterbuchWordsPrefixTest - 2019.05.04 at 12h 01m 15s.xml">
+      <configuration name="WoerterbuchWordsPrefixTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BubbleSortTest - 2019.05.04 at 12h 11m 19s.xml">
+      <configuration name="BubbleSortTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStack_getCount - 2019.05.27 at 18h 27m 43s.xml">
+      <configuration name="TestStack.getCount" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStack_getCount - 2019.05.27 at 19h 01m 57s.xml">
+      <configuration name="TestStack.getCount" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStack_getCount - 2019.05.27 at 19h 03m 57s.xml">
+      <configuration name="TestStack.getCount" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStack_stackEmptyException - 2019.05.27 at 19h 04m 10s.xml">
+      <configuration name="TestStack.stackEmptyException" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestStack - 2019.05.27 at 19h 04m 51s.xml">
+      <configuration name="TestStack" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27985075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29820052" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -254,7 +302,36 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3270525" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24973376" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32960597" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.283419" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3270525" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -271,11 +348,12 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cleanup, Bugfixes and Comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup, Bugfixes and Comments" />
+    <MESSAGE value="Cleanup, Bugfixes and Comments," />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup, Bugfixes and Comments," />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -358,39 +436,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Demo.java">
+    <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Wort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="418">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A07_BubbleSort/BubbleSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A07_BubbleSort/PersonenSortTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A07_BubbleSort/PersonenSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/WoerterbuchWordsPrefixTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="333">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Wort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Woerterbuch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="542">
+          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#995#1003#0" expanded="true" />
-            <element signature="e#1970#1971#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A07_BubbleSort/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A04_TraverseTree/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A07_BubbleSort/BubbleSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="50" selection-start-line="12" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A01_Stack/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding>
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A01_Stack/TestStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A01_Stack/StackEmptyException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/A01_Stack/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
