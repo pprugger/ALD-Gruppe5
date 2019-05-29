@@ -38,21 +38,21 @@ public class Tiefensuche extends BaseTree<Film> {
 			if (node.getLeft() != null)
 			{
 				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getLeft());   //call recursively
+				temp = getNodesInOrder(node.getLeft());     //call recursively
 
-				for (String a: temp) 	//copy new elements into list
+				for (String a: temp)     //copy new elements into list
 				{
 					list.add(a);
 				}
 			}
 
-			list.add(node.getValue().getTitel());	//Add current element to list
+			list.add(node.getValue().getTitel());   //Add current element to list
 			//System.out.println(node.getValue().getTitel());   //DEBUG print Titel
 
 			if(node.getRight() != null)
 			{
 				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getRight());	//call recursively
+				temp = getNodesInOrder(node.getRight());     //call recursively
 
 				for (String a: temp) 	//copy new elements into list
 				{
@@ -75,22 +75,22 @@ public class Tiefensuche extends BaseTree<Film> {
 		List<String> list = new ArrayList<>();
 		Stack<Node<Film>> stack = new Stack<>();
 
-		if(node == null) { return null; }										//check if the root of the tree is null
-		stack.push(node);														//add the root of the tree to the stack
+		if(node == null) { return null; }                          //check if the root of the tree is null
+		stack.push(node);                                          //add the root of the tree to the stack
 
 		while(true)
 		{
-			if(!stack.empty()) { node = stack.pop(); }					//get the next element from stack if the stack
-			else { break;}												//isn't empty, else break loop
+			if(!stack.empty()) { node = stack.pop(); }             //get the next element from stack if the stack
+			else { break;}                                         //isn't empty, else break loop
 
-			if(node.getValue().getLänge() > min && node.getValue().getLänge() < max )	//check if we are in the interval
+			if(node.getValue().getLänge() > min && node.getValue().getLänge() < max )  //check if we are in the interval
 			{
 				list.add(node.getValue().getTitel());
 				System.out.println(node.getValue().getTitel());
 			}
 
-			if(node.getRight() != null) { stack.push(node.getRight()); }	//if not null, push right element to stack
-			if(node.getLeft() != null) { stack.push(node.getLeft()); }		//if not null, push left element to stack
+			if(node.getRight() != null) { stack.push(node.getRight()); }    //if not null, push right element to stack
+			if(node.getLeft() != null) { stack.push(node.getLeft()); }      //if not null, push left element to stack
 		}
 		return list;
 	}
