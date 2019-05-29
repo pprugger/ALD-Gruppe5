@@ -3,9 +3,9 @@ package A03_DoubleLinkedList;
 public class DoubleLinkedList<T>
 {
 
-    public Node<T> first;
-    public Node<T> last;
-    public Node<T> current;
+    public Node<T> first = null;
+    public Node<T> last = null;
+    public Node<T> current = null;
 
     /**
      * Einfuegen einer neuen <T>
@@ -118,8 +118,12 @@ public class DoubleLinkedList<T>
         //return if current is not set (null)
         if (current == null ) { return; }
 
-        //return if there is no next element
-        if (current.getNext() == null ) { return; }
+        //Fixed assumption that if next element is null, current is left as it is
+        if (current.getNext() == null )
+        {
+            current = null;
+            return;
+        }
 
         //else set current to next element
         current = current.getNext();
@@ -133,8 +137,12 @@ public class DoubleLinkedList<T>
         //return if current is not set (null)
         if (current == null ) { return; }
 
-        //return if there is no previous element
-        if (current.getPrevious()== null ) { return; }
+        //Fixed assumption that if previous element is null, current is left as it is
+        if (current.getPrevious()== null )
+        {
+            current = null;
+            return;
+        }
 
         //else set current to previous element
         current = current.getPrevious();
@@ -197,13 +205,20 @@ public class DoubleLinkedList<T>
         //Node<T> temp_previous = null;
         //Node<T> temp_next = null;
 
-        if(temp == null) { return; }  //if temp is null the list is empty, so there is nothing to remove, return then
+        if(temp == null)
+        {
+            first = null;
+            last = null;
+            current = null;
+            return;
+        }  //if temp is null the list is empty, set everything to null to be sure.
 
         if((temp == first) & (temp == last))   //Only one element left in List, set all elements to null and return
         {
             first = null;
             last = null;
             temp = null;
+            current = null;
             return;
         }
 
@@ -212,11 +227,11 @@ public class DoubleLinkedList<T>
             //iterate through the list until we found the right list element
             //if we reach the end of the list, then return
 
-            if(temp.getNext() != null)
+            if(temp.getNext() == null) { return; }
+            else
             {
                 temp = temp.getNext();
             }
-            else { return; }
             count++;
         }
 
@@ -226,9 +241,11 @@ public class DoubleLinkedList<T>
                 //we have more than one element in the list
                 //set first to the next element
                 //set the previous element to null
+                // if temp is current set current to null
                 //delete the reference to temp and return
                 first = first.getNext();
                 first.setPrevious(null);
+                if(temp == current) { current = null; }
                 temp = null;
                 return;
         }
@@ -238,9 +255,11 @@ public class DoubleLinkedList<T>
             //we have more than one element in the list
             //set last to the element before
             //set the next element to null
+            //if temp equals current set current to null
             //delete the reference to temp and return
             last = last.getPrevious();
             last.setNext(null);
+            if(temp == current) { current = null; }
             temp = null;
             return;
         }
@@ -259,8 +278,9 @@ public class DoubleLinkedList<T>
         //temp_previous.setNext(temp_next);
         //temp_next.setPrevious(temp_previous);
 
-        //If we remove the current element set current to null
+        //If we removed the current element set current to null
         if(temp == current) { current = null;}
+        return;
     }
     
     /**
@@ -274,7 +294,10 @@ public class DoubleLinkedList<T>
         //Node<T> temp_previous;
         //Node<T> temp_next;
 
-        if(current == null) { return; } //Current not set, return
+        if(current == null)
+        {
+            throw new CurrentNotSetException();
+        } //Current not set, throw exception
 
         if(current == first & current == last)   //Only one element left in List, set all elements to null and return
         {
@@ -367,7 +390,10 @@ public class DoubleLinkedList<T>
         Node<T> newNode = new Node<T>(a);
         Node<T> temp_next = null;
 
-        if(current == null) { return; } //return if current is not set
+        if(current == null)
+        {
+            throw new CurrentNotSetException();
+        } //Current not set, throw exception
 
         temp_next = current.getNext();  //get the element after current
 
