@@ -1,6 +1,7 @@
 package A05_Breitensuche;
 
-import java.util.List;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class Breitensuche extends BaseTree<Integer> {
 
@@ -16,7 +17,29 @@ public class Breitensuche extends BaseTree<Integer> {
 	 */
 	public List<Integer> getBreadthFirstOrder(Node<Integer> start) {
 
-		return null;
+		List<Integer> list = new ArrayList<>();
+		list.add(start.getValue());
+
+		Queue<Node<Integer>> queue = new LinkedList<>();
+
+		queue.add(start);
+		while (!queue.isEmpty()) {
+			Node<Integer> s = queue.poll();
+
+			if(s.getLeft() != null)
+			{
+				queue.add(s.getLeft());
+				list.add(s.getLeft().getValue());
+			}
+
+			if(s.getRight() != null)
+			{
+				queue.add(s.getRight());
+				list.add(s.getRight().getValue());
+			}
+		}
+
+		return list;
 	}
 
 	/**
@@ -28,7 +51,49 @@ public class Breitensuche extends BaseTree<Integer> {
 	 */
 	public List<Integer> getBreadthFirstOrderForLevel(Node<Integer> start, int level) {
 
-		return null;
+		List<Integer> list = new ArrayList<>();
+
+		Map<Node<Integer>, Integer> abstand = new HashMap<Node<Integer>, Integer>();
+		Queue<Node<Integer>> queue = new LinkedList<Node<Integer>>();
+
+		if(level < 2) {
+			list.add(start.getValue());
+			return list;}
+
+		abstand.put(start, 0);
+		queue.add(start);
+		while (!queue.isEmpty()) {
+			Node<Integer> s = queue.poll();
+			int d = abstand.get(s); // muss enthalten sein
+
+			if(d +1 < level)
+			{
+				if(s.getLeft() != null)
+				{
+					abstand.put(s.getLeft(), ++d);
+					queue.add(s.getLeft());
+					list.add(s.getLeft().getValue());
+
+					System.out.println("Wert: " + s.getLeft().getValue() );
+					System.out.println("Level: " + level);
+					System.out.println("d: " + d);
+					System.out.println("");
+				}
+
+				if(s.getRight() != null)
+				{
+					abstand.put(s.getRight(), ++d);
+					queue.add(s.getRight());
+					list.add(s.getRight().getValue());
+					System.out.println("Wert: " + s.getRight().getValue() );
+					System.out.println("Level: " + level);
+					System.out.println("d: " + d);
+					System.out.println("");
+				}
+			}
+		}
+
+		return list;
 	}
 
 }
