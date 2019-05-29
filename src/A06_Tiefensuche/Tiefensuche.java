@@ -1,6 +1,9 @@
 package A06_Tiefensuche;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 import A05_Breitensuche.BaseTree;
 import A05_Breitensuche.Node;
@@ -13,6 +16,10 @@ public class Tiefensuche extends BaseTree<Film> {
 	 */
 	protected int compare(Film a, Film b) {
 
+		if(a.getLänge() < b.getLänge()) {return -1; }
+		if(a.getLänge() > b.getLänge()) {return 1; }
+		if(a.getLänge() == b.getLänge()) {return 0; }
+
 		return 0;
 	}
 
@@ -23,7 +30,38 @@ public class Tiefensuche extends BaseTree<Film> {
 	 */
 	public List<String> getNodesInOrder(Node<Film> node) {
 
-		return null;
+		List<String> list = new ArrayList<>();
+		Stack<Node<Film>> stack = new Stack<>();
+		List<String> temp;
+
+		if(node == null) { return null; }
+		//list.add(node.getValue().getTitel());
+
+			if (node.getLeft() != null) {
+
+				temp = new ArrayList<>();
+				temp = getNodesInOrder(node.getLeft());
+
+				for (String a: temp) {
+					list.add(a);
+				}
+			}		//if not null, push left element to stack
+
+			list.add(node.getValue().getTitel());
+			System.out.println(node.getValue().getTitel());
+			if(node.getRight() != null)
+			{
+				temp = new ArrayList<>();
+				temp = getNodesInOrder(node.getRight());
+
+				for (String a: temp) {
+					list.add(a);
+				}
+			}		//if not null, push right element to stack
+
+		//System.out.println("List End");
+
+		return list;
 	}
 	
 	/**
