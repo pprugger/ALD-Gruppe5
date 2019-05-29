@@ -56,23 +56,25 @@ public class Breitensuche extends BaseTree<Integer> {
 		Map<Node<Integer>, Integer> abstand = new HashMap<Node<Integer>, Integer>();
 		Queue<Node<Integer>> queue = new LinkedList<Node<Integer>>();
 
-		if(level < 2) {
+		if(level < 2)
+		{
 			list.add(start.getValue());
-			return list;}
+			return list;
+		}
 
 		abstand.put(start, 0);
 		queue.add(start);
 		while (!queue.isEmpty()) {
 			Node<Integer> s = queue.poll();
-			int d = abstand.get(s); // muss enthalten sein
+			int d = abstand.get(s)+1; // muss enthalten sein
 
-			if(d +1 < level)
+			if(d < level)
 			{
 				if(s.getLeft() != null)
 				{
-					abstand.put(s.getLeft(), ++d);
+					abstand.put(s.getLeft(), d);
 					queue.add(s.getLeft());
-					list.add(s.getLeft().getValue());
+					if(d == (level -1)) {list.add(s.getLeft().getValue()); }
 
 					System.out.println("Wert: " + s.getLeft().getValue() );
 					System.out.println("Level: " + level);
@@ -82,9 +84,9 @@ public class Breitensuche extends BaseTree<Integer> {
 
 				if(s.getRight() != null)
 				{
-					abstand.put(s.getRight(), ++d);
+					abstand.put(s.getRight(), d);
 					queue.add(s.getRight());
-					list.add(s.getRight().getValue());
+					if(d == (level -1)) {list.add(s.getRight().getValue());}
 					System.out.println("Wert: " + s.getRight().getValue() );
 					System.out.println("Level: " + level);
 					System.out.println("d: " + d);
