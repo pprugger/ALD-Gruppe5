@@ -72,7 +72,32 @@ public class Tiefensuche extends BaseTree<Film> {
 	 */
 	public List<String> getMinMaxPreOrder(double min, double max) {
 
-		return null;
+
+		Node<Film> node = root;
+		List<String> list = new ArrayList<>();
+		List<String> temp;
+
+		Stack<Node<Film>> stack = new Stack<>();
+
+		if(node == null) { return null; }										//check if the root of the tree is null
+		stack.push(node);														//add the root of the tree to the stack
+
+		while(true)
+		{
+			if(!stack.empty()) { node = stack.pop(); }					//get the next element from stack if the stack
+			else { break;}												//if it isn't empty, else break loop
+
+			if(node.getValue().getLänge() > min && node.getValue().getLänge() < max )
+			{
+				list.add(node.getValue().getTitel());
+				System.out.println(node.getValue().getTitel());
+			}
+
+			if(node.getRight() != null) { stack.push(node.getRight()); }	//if not null, push right element to stack
+			if(node.getLeft() != null) { stack.push(node.getLeft()); }		//if not null, push left element to stack
+			/* check if element contains prefix, if so add the String to the HashSet */
+		}
+		return list;
 	}
 
 }
