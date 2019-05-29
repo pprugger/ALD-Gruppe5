@@ -31,35 +31,34 @@ public class Tiefensuche extends BaseTree<Film> {
 	public List<String> getNodesInOrder(Node<Film> node) {
 
 		List<String> list = new ArrayList<>();
-		Stack<Node<Film>> stack = new Stack<>();
 		List<String> temp;
 
-		if(node == null) { return null; }
-		//list.add(node.getValue().getTitel());
+		if(node == null) { return null; }   //return null if no element in tree
 
-			if (node.getLeft() != null) {
-
+			if (node.getLeft() != null)
+			{
 				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getLeft());
+				temp = getNodesInOrder(node.getLeft());   //call recursively
 
-				for (String a: temp) {
+				for (String a: temp) 	//copy new elements into list
+				{
 					list.add(a);
 				}
-			}		//if not null, push left element to stack
+			}
 
-			list.add(node.getValue().getTitel());
-			System.out.println(node.getValue().getTitel());
+			list.add(node.getValue().getTitel());	//Add current element to list
+			//System.out.println(node.getValue().getTitel());   //DEBUG print Titel
+
 			if(node.getRight() != null)
 			{
 				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getRight());
+				temp = getNodesInOrder(node.getRight());	//call recursively
 
-				for (String a: temp) {
+				for (String a: temp) 	//copy new elements into list
+				{
 					list.add(a);
 				}
-			}		//if not null, push right element to stack
-
-		//System.out.println("List End");
+			}
 
 		return list;
 	}
@@ -72,11 +71,8 @@ public class Tiefensuche extends BaseTree<Film> {
 	 */
 	public List<String> getMinMaxPreOrder(double min, double max) {
 
-
 		Node<Film> node = root;
 		List<String> list = new ArrayList<>();
-		List<String> temp;
-
 		Stack<Node<Film>> stack = new Stack<>();
 
 		if(node == null) { return null; }										//check if the root of the tree is null
@@ -85,9 +81,9 @@ public class Tiefensuche extends BaseTree<Film> {
 		while(true)
 		{
 			if(!stack.empty()) { node = stack.pop(); }					//get the next element from stack if the stack
-			else { break;}												//if it isn't empty, else break loop
+			else { break;}												//isn't empty, else break loop
 
-			if(node.getValue().getLänge() > min && node.getValue().getLänge() < max )
+			if(node.getValue().getLänge() > min && node.getValue().getLänge() < max )	//check if we are in the interval
 			{
 				list.add(node.getValue().getTitel());
 				System.out.println(node.getValue().getTitel());
@@ -95,9 +91,7 @@ public class Tiefensuche extends BaseTree<Film> {
 
 			if(node.getRight() != null) { stack.push(node.getRight()); }	//if not null, push right element to stack
 			if(node.getLeft() != null) { stack.push(node.getLeft()); }		//if not null, push left element to stack
-			/* check if element contains prefix, if so add the String to the HashSet */
 		}
 		return list;
 	}
-
 }
