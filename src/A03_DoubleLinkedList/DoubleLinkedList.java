@@ -175,6 +175,7 @@ public class DoubleLinkedList<T>
             //if we reach the end of the list, return null
             if(temp.getNext() == null ) { return null;}
             temp = temp.getNext();
+            count++;
 
         }
         //else return data
