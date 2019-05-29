@@ -189,6 +189,20 @@ public class TestDoubleLinkedList {
 		dll.movePrevious();
 		assertEquals("zwei", dll.getCurrent().getAusrede());
 	}
+
+	@Test
+	public void get()
+	{
+		DoubleLinkedList<Ausrede> dll = new DoubleLinkedList<>();
+		dll.add(new Ausrede("eins"));
+		dll.add(new Ausrede("zwei"));
+		dll.add(new Ausrede("drei"));
+		dll.add(new Ausrede("vier"));
+		assertEquals("zwei", dll.get(2).getAusrede());
+		dll.remove(2);
+		assertEquals("drei", dll.get(2).getAusrede());
+		assertEquals("vier", dll.get(3).getAusrede());
+	}
 	
 	@Test(expected=CurrentNotSetException.class)
 	public void removeCurrentException() throws CurrentNotSetException {
