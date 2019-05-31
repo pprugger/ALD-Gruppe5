@@ -52,45 +52,38 @@ public class Breitensuche extends BaseTree<Integer> {
 	public List<Integer> getBreadthFirstOrderForLevel(Node<Integer> start, int level) {
 
 		List<Integer> list = new ArrayList<>();
-
-		Map<Node<Integer>, Integer> abstand = new HashMap<Node<Integer>, Integer>();
 		Queue<Node<Integer>> queue = new LinkedList<Node<Integer>>();
 
+		//Special case if we have only one level
 		if(level < 2)
 		{
 			list.add(start.getValue());
 			return list;
 		}
 
-		abstand.put(start, 0);
+		//Set the level of the start node to one and add to queue
+		start.setLevel(1);
 		queue.add(start);
+
 		while (!queue.isEmpty()) {
-			Node<Integer> s = queue.poll();
-			int d = abstand.get(s)+1; // muss enthalten sein
+			Node<Integer> parentNode = queue.poll();    //Get node from queue
+			int currentLevel = parentNode.getLevel()+1; 	 //Increment the level
 
-			if(d < level)
+			if(currentLevel <= level)
 			{
-				if(s.getLeft() != null)
+				if(parentNode.getLeft() != null)
 				{
-					abstand.put(s.getLeft(), d);
-					queue.add(s.getLeft());
-					if(d == (level -1)) {list.add(s.getLeft().getValue()); }
-
-					System.out.println("Wert: " + s.getLeft().getValue() );
-					System.out.println("Level: " + level);
-					System.out.println("d: " + d);
-					System.out.println("");
+					parentNode.getLeft().setLevel(currentLevel);      //Set the level of the left node
+					queue.add(parentNode.getLeft());               //Add the node to the queue
+					//If we are on the searched level add the node value to the list
+					if(currentLevel == level) {list.add(parentNode.getLeft().getValue()); }
 				}
 
-				if(s.getRight() != null)
+				if(parentNode.getRight() != null)
 				{
-					abstand.put(s.getRight(), d);
-					queue.add(s.getRight());
-					if(d == (level -1)) {list.add(s.getRight().getValue());}
-					System.out.println("Wert: " + s.getRight().getValue() );
-					System.out.println("Level: " + level);
-					System.out.println("d: " + d);
-					System.out.println("");
+					parentNode.getRight().setLevel(currentLevel);
+					queue.add(parentNode.getRight());
+					if(currentLevel == level ) {list.add(parentNode.getRight().getValue());}
 				}
 			}
 		}

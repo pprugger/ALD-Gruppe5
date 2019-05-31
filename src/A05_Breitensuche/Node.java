@@ -22,6 +22,8 @@ public class Node<Type> {
 	 */
 	protected final Type value;
 
+	/* Level des Knotens */
+	protected int level;
 
 	/**
 	 * Konstruktor
@@ -58,5 +60,12 @@ public class Node<Type> {
 	public Type getValue() {
 		return value;
 	}
-	
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
 }
