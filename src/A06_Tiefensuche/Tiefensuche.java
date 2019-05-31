@@ -31,33 +31,18 @@ public class Tiefensuche extends BaseTree<Film> {
 	public List<String> getNodesInOrder(Node<Film> node) {
 
 		List<String> list = new ArrayList<>();
-		List<String> temp;
-
 		if(node == null) { return null; }   //return null if no element in tree
 
 			if (node.getLeft() != null)
 			{
-				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getLeft());     //call recursively
-
-				for (String a: temp)     //copy new elements into list
-				{
-					list.add(a);
-				}
+				list.addAll(getNodesInOrder(node.getLeft()));
 			}
 
 			list.add(node.getValue().getTitel());   //Add current element to list
-			//System.out.println(node.getValue().getTitel());   //DEBUG print Titel
 
 			if(node.getRight() != null)
 			{
-				temp = new ArrayList<>();
-				temp = getNodesInOrder(node.getRight());     //call recursively
-
-				for (String a: temp) 	//copy new elements into list
-				{
-					list.add(a);
-				}
+				list.addAll(getNodesInOrder(node.getRight()));
 			}
 
 		return list;
