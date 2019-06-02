@@ -52,7 +52,7 @@ public class MergeSort implements PersonenSort {
 		int middle = end /2;
 
 		int i = start;
-		int j = start;
+		int j = middle;
 		int k = start;
 
 		while(i<= middle && j <= end)
