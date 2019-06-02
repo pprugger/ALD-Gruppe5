@@ -48,6 +48,7 @@ public class PersonenSortTest {
 		p[0] = personen[7];
 		p[1] = personen[8];
 		ps.sort(p);
+
 		assertEquals("Feynman", p[0].getNachname());
 		assertEquals("Hubble", p[1].getNachname());
 		// sorted order
@@ -67,6 +68,7 @@ public class PersonenSortTest {
 		p[4] = personen[8];
 		// unsorted order
 		ps.sort(p);
+
 		assertEquals("Einstein", p[0].getNachname());
 		assertEquals("Feynman", p[1].getNachname());
 		assertEquals("Hubble", p[2].getNachname());
@@ -91,6 +93,14 @@ public class PersonenSortTest {
 		p[2] = personen[2];
 		// unsorted order
 		ps.sort(p);
+
+		System.out.println("Sorted array:");
+		for (Person a: p)
+		{
+			System.out.println(a.getNachname() + " " + a.getVorname());
+		}
+
+
 		assertEquals("Homer", p[0].getVorname());
 		assertEquals("Lisa", p[1].getVorname());
 		assertEquals("Marge", p[2].getVorname());

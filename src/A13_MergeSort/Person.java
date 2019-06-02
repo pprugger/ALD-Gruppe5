@@ -23,7 +23,15 @@ public class Person {
 	 * Vergleicht zwei Personen miteinander
 	 * @return <0, wenn a<b || =0, wenn a=b || >0, wenn a>b
 	 */
-	public int compareTo(Person p) {
-		return 0;
+	public int compareTo(Person p)
+	{
+		if( p.getNachname().equals(this.getNachname()))
+		{
+			return p.getVorname().compareTo(this.getVorname());
+		}
+		else
+		{
+			return p.getNachname().compareTo(this.getNachname());
+		}
 	}
 }
