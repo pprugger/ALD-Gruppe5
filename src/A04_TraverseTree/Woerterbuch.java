@@ -56,7 +56,7 @@ public class Woerterbuch {
 
 
 		if(word == null) { return null; }										//check if the root of the tree is null
-		if(word.getWort().contains(prefix)) { Strings.add(word.getWort()); }	//if not check if the root contains the prefix
+
 		stack.push(word);														//add the root of the tree to the stack
 
 		while(true)
