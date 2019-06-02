@@ -93,14 +93,6 @@ public class PersonenSortTest {
 		p[2] = personen[2];
 		// unsorted order
 		ps.sort(p);
-
-		System.out.println("Sorted array:");
-		for (Person a: p)
-		{
-			System.out.println(a.getNachname() + " " + a.getVorname());
-		}
-
-
 		assertEquals("Homer", p[0].getVorname());
 		assertEquals("Lisa", p[1].getVorname());
 		assertEquals("Marge", p[2].getVorname());
