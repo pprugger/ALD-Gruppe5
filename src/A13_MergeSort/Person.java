@@ -25,13 +25,13 @@ public class Person {
 	 */
 	public int compareTo(Person p)
 	{
-		if( p.getNachname().equals(this.getNachname()))
+		if( this.getNachname().equals(p.getNachname()))
 		{
-			return p.getVorname().compareTo(this.getVorname());
+			return this.getVorname().compareTo(p.getVorname());
 		}
 		else
 		{
-			return p.getNachname().compareTo(this.getNachname());
+			return this.getNachname().compareTo(p.getNachname());
 		}
 	}
 }

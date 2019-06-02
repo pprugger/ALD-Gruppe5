@@ -21,11 +21,9 @@ public class MergeSort implements PersonenSort {
 	 */
 	public void sort(Person[] personen, int start, int end)
 	{
-		int mitte;
+		int mitte = end / 2;
 
-		if(start < end) { mitte = start + (end - start) / 2; }
-		else { return;}
-
+		if( personen.length <= 1) { return;}
 
 		// Für Merge: Hälften in eigene Arrays kopieren
 		// Hinweis: bei copyOfRange ist Obergrenze exklusiv, deshalb "+ 1"
@@ -33,8 +31,8 @@ public class MergeSort implements PersonenSort {
 		Person[] teil2 = Arrays.copyOfRange(personen, mitte+1, end+1);
 		// Beide Hälften zusammenfügen und in data-Array schreiben
 
-		sort(teil1, start, mitte);
-		sort(teil2, mitte+1,end);
+		sort(teil1, 0, teil1.length -1);
+		sort(teil2, 0,teil2.length -1);
 
 		merge(teil1, teil2, personen, start);
 	}
@@ -48,16 +46,13 @@ public class MergeSort implements PersonenSort {
 	 */
 	public void merge(Person[] pers1, Person[] pers2, Person[] result, int start) {
 
-		int end = pers1.length -1 + pers2.length -1;
-		int middle = end /2;
-
-		int i = start;
-		int j = middle;
+		int i = 0;
+		int j = 0;
 		int k = start;
 
-		while(i<= middle && j <= end)
+		while(i < pers1.length && j < pers2.length )
 		{
-			if(pers1[i].compareTo(pers2[j]) > 0)
+			if(pers1[i].compareTo(pers2[j]) <= 0)
 			{
 				result[k] = pers1[i];
 				i++;
@@ -70,12 +65,11 @@ public class MergeSort implements PersonenSort {
 			k++;
 		}
 
-		while( i <= middle)
+		while( i < pers1.length )
 		{
 			result[k] = pers1[i];
 			k++;
 			i++;
 		}
 	}
-
 }
