@@ -17,7 +17,7 @@ public class DijkstraDGShortestPath extends FindWay {
 		dist = new int[numv];
 		visited = new boolean[numv];
 		for (int i=0; i < numv; i++) {
-			dist[i] = 9999;		// Summen im Graph dürfen nie mehr ergeben
+			dist[i] = 9999;	// Summen im Graph dürfen nie mehr ergeben
 		}
 	}
 	
@@ -35,6 +35,9 @@ public class DijkstraDGShortestPath extends FindWay {
 			visited[v] = true;
 			List<WeightedEdge> edges = graph.getEdges(v);
 			for (WeightedEdge we: edges) {
+				if(we.charge){
+					continue;
+				}
 				int newcost = dist[v] + we.weight;
 				int tov = we.to_vertex;
 				if (newcost < dist[tov]) {

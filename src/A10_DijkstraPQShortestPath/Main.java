@@ -21,7 +21,6 @@ public class Main {
 		DijkstraPQShortestPath dfs = new DijkstraPQShortestPath(g);
 		List<Integer> way = dfs.findWay(0, 7);
 		printWay(way);
-
 	}
 	
 	public static void printWay(List<Integer> way) {

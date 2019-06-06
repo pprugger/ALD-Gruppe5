@@ -13,13 +13,14 @@ public abstract class FindWay {
 		this.pred = new int[graph.numVertices()];
 	}
 
+
 	/**
 	 * Liefert den Weg von (from) nach (to) als Liste zurück
 	 * @param from Startknoten
 	 * @param to Zielknoten
 	 * @return Weg von Start nach Ziel oder null
 	 */
-	public List<Integer> findWay(int from, int to) {
+	public List<Integer> findWay(int from, int to,boolean useChargeRoads) {
 		initPathSearch();
 		if (!calculatePath(from, to)) {
 			return null;

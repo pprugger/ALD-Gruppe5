@@ -25,6 +25,11 @@ public class ListGraph implements Graph {
 		return directed;
 	}
 
+	@Override
+	public void addEdge(int u, int v, int weight, boolean charge) {
+
+	}
+
 	public boolean hasEdge(int u, int v) {
 		WeightedEdge pv = findEdge(u, v);
 		return pv != null;
@@ -56,6 +61,11 @@ public class ListGraph implements Graph {
 	}
 
 	public void removeEdge(int u, int v) {
+		addEdge(u,v,0);{
+			if(!directed){
+				addEdge(v,u,0);
+			}
+		}
 		// TODO
 	}
 

@@ -1,5 +1,6 @@
 package A11_DijkstraDGShortestPath;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -34,17 +35,37 @@ public class ArrayGraph implements Graph {
 	public void addEdge(int u, int v) {
 		addEdge(u, v, 1);
 	}
-	
+
 	public void addEdge(int u, int v, int weight) {
-		// TODO
+		graph[u][v] = weight;
+		if(!directed){
+			graph[v][u] = weight;
+		}
+	}
+
+	@Override
+	public void addEdge(int u, int v, int weight, boolean charge) {
+		graph[u][v] = weight;
+		if(!directed){
+			graph[v][u] = weight;
+		}
 	}
 
 	public void removeEdge(int u, int v) {
+		graph[u][v] = 0;
+		if(!directed){
+			graph[v][u] = 0;
+		}
 		// TODO
 	}
 
 	public List<WeightedEdge> getEdges(int v) {
-		// TODO
-		return null;
+		List<WeightedEdge> result = new LinkedList<>();
+		for (int i = 0; i < numVertices; i++) {
+			if(graph[v][i] != 0){
+				result.add(new WeightedEdge(v,i,getEdgeWeight(v,i)));
+			}
+		}
+		return result;
 	}
 }
