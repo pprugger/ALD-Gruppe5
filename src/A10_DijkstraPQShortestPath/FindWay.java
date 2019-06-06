@@ -57,7 +57,7 @@ public abstract class FindWay {
 			current = pred[current];
 		}
 
-		Collections.reverse(results);             //now we have from the end to the start, so reverse it
+		Collections.reverse(results);             //now we have the way from the end to the start, so reverse it
 		return results;
 	}
 }
