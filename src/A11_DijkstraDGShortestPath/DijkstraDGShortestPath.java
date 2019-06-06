@@ -17,7 +17,7 @@ public class DijkstraDGShortestPath extends FindWay {
 		dist = new int[numv];
 		visited = new boolean[numv];
 		for (int i=0; i < numv; i++) {
-			dist[i] = 9999;	// Summen im Graph dürfen nie mehr ergeben
+			dist[i] = Integer.MAX_VALUE;	// Summen im Graph dürfen nie mehr ergeben
 		}
 	}
 	
@@ -51,7 +51,7 @@ public class DijkstraDGShortestPath extends FindWay {
 	private int findNearestUnvisitedVertex() {
 		int min = 9999;
 		int min_pos = -1;
-		for (int i=0; i < dist.length; i++) {
+		for (int i = 0; i < dist.length; i++) {
 			if (dist[i] < min && !visited[i]) {
 				min_pos = i;
 				min = dist[i];

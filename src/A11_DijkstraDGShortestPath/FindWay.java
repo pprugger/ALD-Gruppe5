@@ -20,7 +20,7 @@ public abstract class FindWay {
 	 * @param to Zielknoten
 	 * @return Weg von Start nach Ziel oder null
 	 */
-	public List<Integer> findWay(int from, int to,boolean useChargeRoads) {
+	public List<Integer> findWay(int from, int to, boolean useChargeRoads) {
 		initPathSearch();
 		if (!calculatePath(from, to)) {
 			return null;
