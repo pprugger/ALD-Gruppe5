@@ -32,34 +32,33 @@ public class DijkstraPQShortestPath extends FindWay {
 	 *            Startknoten
 	 */
 	protected boolean calculatePath(int from, int to) {
-		VertexHeap heapy = new VertexHeap(graph.numVertices());
-		HashSet<WeightedEdge> set = new HashSet<>();
+		VertexHeap heapy = new VertexHeap(graph.numVertices());            //initialize heap
 
 		for (int i = 0; i < graph.numVertices(); i++) {
-			pred[i]=-1;
-			dist[i]=Integer.MAX_VALUE;
+			pred[i]= -1;
+			//dont have to initialize dist here because that's done in initPathSearch()
 			heapy.insert(new Vertex(i,dist[i]));
 		}
 
-		dist[from]=0;
+		dist[from] = 0;                    //startvertex has distance 0 and cost 0
 		heapy.setCost(from,0);
 
 		while (!heapy.isEmpty()){
-			Vertex current = heapy.remove();
+			Vertex current = heapy.remove();    //get vertex out of heap
 
-			if(current.vertex==to){
-				break;
-			}
-			List<WeightedEdge> edges = graph.getEdges(current.vertex);
+			if(current.vertex == to) { break; } //break if we reached the destination
 
-			for (WeightedEdge we:edges) {
-				if(dist[we.to_vertex]>dist[current.vertex]+we.weight){
-					dist[we.to_vertex]=dist[current.vertex]+we.weight;
-					pred[we.to_vertex]=current.vertex;
-					heapy.setCost(we.to_vertex,dist[we.to_vertex]);
+			List<WeightedEdge> edges = graph.getEdges(current.vertex);    //create a list of all the edges of the current vertex
+
+			//iterate through the list and set the distances
+			for (WeightedEdge we : edges) {
+				if( dist[we.to_vertex] > dist[current.vertex] + we.weight)
+				{
+					dist[we.to_vertex] = dist[current.vertex] + we.weight;   //update distance of vertex
+					pred[we.to_vertex] = current.vertex;                     //set predecessor of vertex
+					heapy.setCost(we.to_vertex, dist[we.to_vertex]);          //set cost of vertex
 				}
 			}
-
 		}
 
 		return true;

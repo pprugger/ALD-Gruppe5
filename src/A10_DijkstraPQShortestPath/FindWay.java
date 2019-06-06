@@ -2,6 +2,7 @@ package A10_DijkstraPQShortestPath;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class FindWay {
@@ -44,15 +45,19 @@ public abstract class FindWay {
 	 * @return Weg als Liste
 	 */
 	protected ArrayList<Integer> createWay(int from, int to) {
-		ArrayList<Integer> results = new ArrayList<>();
 
-		int help = to;
-		while (help != from)
+		if(pred[to] == -1) { return null; }   //if to has no predecessor than we didn't find a way to to
+
+		ArrayList<Integer> results = new ArrayList<>();
+		int current = to;
+
+		while (current != -1)                     //the predecessor from the first vertex is -1
 		{
-			results.add(0,help);
-			help = pred[help];
+			results.add(current);
+			current = pred[current];
 		}
-		results.add(0,from);
+
+		Collections.reverse(results);             //now we have from the end to the start, so reverse it
 		return results;
 	}
 }

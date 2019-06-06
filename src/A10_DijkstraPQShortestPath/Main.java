@@ -29,7 +29,7 @@ public class Main {
 			System.out.println("Kein Weg gefunden.");
 			return;
 		}
-		for (int i=0; i < way.size(); i++) {
+		for (int i = 0; i < way.size(); i++) {
 			if (i != 0)
 				System.out.print(" -> ");
 			System.out.print(way.get(i));
