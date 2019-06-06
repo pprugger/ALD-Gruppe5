@@ -19,6 +19,7 @@ public class Demo {
         g.addEdge(3, 6,  2);
         g.addEdge(3, 7,  1);
         g.addEdge(5, 6,  3);
+
         for (int i = 0; i < g.numVertices(); i++) {
             g.setLand(lands[i], i);
         }
@@ -39,6 +40,4 @@ public class Demo {
             System.out.print(way.get(i));
         }
     }
-
-
 }
