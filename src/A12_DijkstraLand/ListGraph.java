@@ -2,16 +2,13 @@ package A12_DijkstraLand;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ListGraph implements Graph {
 
 	private ArrayList<WeightedEdge>[] graph;
 	private int numVertices;
 	private boolean directed;
 	private String[] land;
-	
-	
-	@SuppressWarnings("unchecked")
+
 	public ListGraph(int numVertices, boolean directed) {
 		graph = new ArrayList[numVertices];
 		land = new String[numVertices];
@@ -23,10 +20,6 @@ public class ListGraph implements Graph {
 		
 		this.numVertices = numVertices;
 		this.directed = directed;
-		
-		
-		
-		
 	}
 	
 	public int numVertices() {
