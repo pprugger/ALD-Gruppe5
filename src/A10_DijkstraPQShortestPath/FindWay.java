@@ -44,10 +44,15 @@ public abstract class FindWay {
 	 * @return Weg als Liste
 	 */
 	protected ArrayList<Integer> createWay(int from, int to) {
-		ArrayList<Integer> way = new ArrayList<Integer>();
+		ArrayList<Integer> results = new ArrayList<>();
 
-		// TODO: IHRE IMPLEMENTIERUNG
-
-		return way;
+		int help = to;
+		while (help != from)
+		{
+			results.add(0,help);
+			help = pred[help];
+		}
+		results.add(0,from);
+		return results;
 	}
 }

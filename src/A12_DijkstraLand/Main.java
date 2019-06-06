@@ -2,7 +2,7 @@ package A12_DijkstraLand;
 
 import java.util.List;
 
-public class Demo {
+public class Main {
 
     public static void main(String[] args) {
         String [] lands = {"Austria", "Austria", "Russia", "Argentina", "Spain", "Andorra", "Whatever", "Andorra"};
